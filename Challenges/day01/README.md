@@ -13,3 +13,4 @@ Welcome to the #90DaysOfDevOps Challenge with the #TrainWithShubham Community! T
 
         3.Why DevOps is Important:
 
+![Screenshot from 2024-10-26 18-06-21](https://github.com/user-attachments/assets/62f3aa58-b5fd-4ed3-a6e7-4686d7a77d97)
