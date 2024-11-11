@@ -1,15 +1,15 @@
-# Welcome to the hashtag#Day02 of hashtag#90DaysOfDevOps Challenge 📚 
+## Welcome to the #Day02 of #90DaysOfDevOps Challenge 📚 
 
-## 🌐 𝐖𝐡𝐲 𝐋𝐢𝐧𝐮𝐱?
+### 🌐 𝐖𝐡𝐲 𝐋𝐢𝐧𝐮𝐱?
 🔹 Streamlined workflows for development
 🔹 Increased customization for various projects
 🔹 Hands-on learning in cloud environments
 
-## 𝐁𝐚𝐬𝐢𝐜 𝐥𝐢𝐧𝐮𝐱 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 🐧 
+### 𝐁𝐚𝐬𝐢𝐜 𝐥𝐢𝐧𝐮𝐱 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 🐧 
 𝐋𝐢𝐬𝐭𝐢𝐧𝐠 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬
 ls option_flag arguments --> list the sub directories and files avaiable in the present directory
 
-## 𝐄𝐱𝐚𝐦𝐩𝐥𝐞𝐬:
+### 𝐄𝐱𝐚𝐦𝐩𝐥𝐞𝐬:
 ls -l--> list the files and directories in long list format with extra information
 ls -a --> list all including hidden files and directory
 ls *.sh --> list all the files having .sh extension.
