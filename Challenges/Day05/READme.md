@@ -49,7 +49,7 @@ BACKUP_DIR="/path/to/your/backup"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 BACKUP_FILE="${BACKUP_DIR}/backup_${TIMESTAMP}.tar.gz"
 
-# Ensure the backup directory exists
+
 if [ ! -d "$BACKUP_DIR" ]; then
     mkdir -p "$BACKUP_DIR"
     echo "Created backup directory: $BACKUP_DIR"
