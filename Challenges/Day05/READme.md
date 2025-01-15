@@ -42,7 +42,7 @@ The script will:
 * Add a timestamp to the backup file.
 * Optionally clean old backups (e.g., older than 7 days).
 # code
-' SOURCE_DIR="/path/to/your/work"    
+''' SOURCE_DIR="/path/to/your/work"    
 BACKUP_DIR="/path/to/your/backup"  
 
 
@@ -63,5 +63,5 @@ echo "Backup completed: $BACKUP_FILE"
 
 echo "Cleaning up old backups..."
 find "$BACKUP_DIR" -type f -name "backup_*.tar.gz" -mtime +7 -exec rm -f {} \;
-echo "Old backups removed (if any)." '
+echo "Old backups removed (if any)." '''
 
