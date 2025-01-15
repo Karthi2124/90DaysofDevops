@@ -22,7 +22,7 @@ Step 3: Write the Script
 Add the following content to the script file:
 bash
 ## Copy code
-"" echo "Enter the name of the directory to create:"
+> echo "Enter the name of the directory to create:"
 read dir_name
 
 echo "Enter the number of directories to create:"
@@ -32,10 +32,10 @@ for ((i=1; i<=num_dirs; i++))
 do
     mkdir "${dir_name}_$i"
     echo "Directory ${dir_name}_$i created"
-done "" 
+> done 
 
 ## 2. Create a Script to Backup All Your Work:
-####m Script Overview
+#### Script Overview
 The script will:
 > Backup all files in a source directory.
 > Save the backup to a destination directory.
