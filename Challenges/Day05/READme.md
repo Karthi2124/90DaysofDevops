@@ -23,15 +23,15 @@ Add the following content to the script file:
 bash
 ## Copy code
 > echo "Enter the name of the directory to create:"
-read dir_name
+> read dir_name
 
-echo "Enter the number of directories to create:"
-read num_dirs
+> echo "Enter the number of directories to create:"
+> read num_dirs
 
-for ((i=1; i<=num_dirs; i++))
-do
-    mkdir "${dir_name}_$i"
-    echo "Directory ${dir_name}_$i created"
+> for ((i=1; i<=num_dirs; i++))
+> do
+   > mkdir "${dir_name}_$i"
+   > echo "Directory ${dir_name}_$i created"
 > done 
 
 ## 2. Create a Script to Backup All Your Work:
