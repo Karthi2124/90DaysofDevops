@@ -34,3 +34,11 @@ do
     echo "Directory ${dir_name}_$i created"
 done "" 
 
+## 2. Create a Script to Backup All Your Work:
+####m Script Overview
+The script will:
+> Backup all files in a source directory.
+> Save the backup to a destination directory.
+> Add a timestamp to the backup file.
+> Optionally clean old backups (e.g., older than 7 days).
+
