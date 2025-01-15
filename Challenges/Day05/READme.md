@@ -30,8 +30,8 @@ bash
 
 > for ((i=1; i<=num_dirs; i++))
 > do
-   > mkdir "${dir_name}_$i"
-   > echo "Directory ${dir_name}_$i created"
+> mkdir "${dir_name}_$i"
+> echo "Directory ${dir_name}_$i created"
 > done 
 
 ## 2. Create a Script to Backup All Your Work:
