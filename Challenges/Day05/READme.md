@@ -41,4 +41,27 @@ The script will:
 * Save the backup to a destination directory.
 * Add a timestamp to the backup file.
 * Optionally clean old backups (e.g., older than 7 days).
+# code
+' SOURCE_DIR="/path/to/your/work"    
+BACKUP_DIR="/path/to/your/backup"  
+
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+BACKUP_FILE="${BACKUP_DIR}/backup_${TIMESTAMP}.tar.gz"
+
+# Ensure the backup directory exists
+if [ ! -d "$BACKUP_DIR" ]; then
+    mkdir -p "$BACKUP_DIR"
+    echo "Created backup directory: $BACKUP_DIR"
+fi
+
+
+echo "Creating backup from $SOURCE_DIR to $BACKUP_FILE..."
+tar -czf "$BACKUP_FILE" -C "$SOURCE_DIR" .
+echo "Backup completed: $BACKUP_FILE"
+
+
+echo "Cleaning up old backups..."
+find "$BACKUP_DIR" -type f -name "backup_*.tar.gz" -mtime +7 -exec rm -f {} \;
+echo "Old backups removed (if any)." '
 
