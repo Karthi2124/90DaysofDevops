@@ -31,7 +31,7 @@ The script will:
 * Add a timestamp to the backup file.
 * Optionally clean old backups (e.g., older than 7 days).
 
-  ## 3. Cron and Crontab to Automate the Backup Script:
+## 3. Cron and Crontab to Automate the Backup Script:
 * Cron: A time-based job scheduler in Unix-like operating systems. It automates repetitive tasks by running commands or scripts at specified times and intervals.
 * Crontab: Short for "cron table," it is a configuration file where you define the tasks (called "cron jobs") and their schedules.
 ### Use of Cron and Crontab
