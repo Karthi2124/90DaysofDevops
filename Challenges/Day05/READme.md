@@ -22,8 +22,7 @@ Step 3: Write the Script
 Add the following content to the script file:
 bash
 ## Copy code
-
-echo "Enter the name of the directory to create:"
+"" echo "Enter the name of the directory to create:"
 read dir_name
 
 echo "Enter the number of directories to create:"
@@ -33,18 +32,5 @@ for ((i=1; i<=num_dirs; i++))
 do
     mkdir "${dir_name}_$i"
     echo "Directory ${dir_name}_$i created"
-done
-Step 4: Save and Exit
-Save the file (Ctrl + O in nano) and exit (Ctrl + X).
-Step 5: Make the Script Executable
-Change the script's permissions to make it executable:
-bash
-Copy code
-chmod +x create_directories.sh
-Step 6: Execute the Script
-Run the script:
-bash
-Copy code
-./create_directories.sh
-
+done "" 
 
