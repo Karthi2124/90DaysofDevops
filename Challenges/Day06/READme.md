@@ -98,7 +98,6 @@ Note the changes in permissions using `ls -ltr`.
 Create a script `change_permissions.sh`:
 
 ```bash
-#!/bin/bash
 read -p "Enter directory path: " dir
 read -p "Enter permissions (e.g., 755): " perms
 for file in "$dir"/*; do
@@ -117,7 +116,6 @@ bash change_permissions.sh
 Create a script `set_acl_permissions.sh`:
 
 ```bash
-#!/bin/bash
 read -p "Enter file path: " file
 read -p "Enter username: " user
 read -p "Enter ACL permissions (e.g., rwx): " perms
@@ -174,7 +172,6 @@ ls -ld sticky_test
 Create `backup_permissions.sh`:
 
 ```bash
-#!/bin/bash
 read -p "Enter directory path: " dir
 getfacl -R "$dir" > permissions_backup.acl
 echo "Permissions backed up to permissions_backup.acl"
@@ -185,7 +182,6 @@ echo "Permissions backed up to permissions_backup.acl"
 Create `restore_permissions.sh`:
 
 ```bash
-#!/bin/bash
 read -p "Enter backup file path: " backup
 setfacl --restore="$backup"
 echo "Permissions restored from $backup"
