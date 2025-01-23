@@ -1,4 +1,4 @@
-# Package Managers and Installation Guide
+# Package Managers and Installation 
 
 A **package manager** is a tool that allows users to install, remove, upgrade, configure, and manage software packages on an operating system. It simplifies the process of managing software by automating tasks such as dependency resolution and updates.
 
