@@ -34,8 +34,7 @@ This repository contains a Bash script that demonstrates fundamental shell scrip
 Below is the content of the shell script:
 
 ```bash
-#!/bin/bash
-# Shell Scripting Challenge
+
 
 # Task 1: Comments
 # This script demonstrates the use of comments, echo, variables, built-in variables, and wildcards.
