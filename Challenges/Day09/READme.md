@@ -29,34 +29,29 @@ This Bash script automates the process of creating backups of files in a directo
 ### **Code**
 
 ```bash
-#!/bin/bash
 
-# Check if directory path is provided as an argument
 if [ -z "$1" ]; then
   echo "Usage: $0 <directory_path>"
   exit 1
 fi
 
-# Assign the provided directory path to a variable
 directory_path=$1
 
-# Generate a timestamp for unique backup folder naming
+
 timestamp=$(date +'%Y-%m-%d_%H-%M-%S')
 backup_dir="${directory_path}/backup_${timestamp}"
 
-# Create the backup directory and copy all files from the target directory into it
+
 mkdir -p "$backup_dir"
 cp -r "${directory_path}"/* "$backup_dir"
 echo "Backup created: $backup_dir"
 
-# List all backup directories, sorted by newest first
 backup_folders=($(ls -dt ${directory_path}/backup_*))
 
-# Keep only the last 3 backups, delete older backups
 while [ "${#backup_folders[@]}" -gt 3 ]; do
   oldest_backup="${backup_folders[-1]}"
   rm -rf "$oldest_backup"
   echo "Deleted old backup: $oldest_backup"
-  # Update the array to remove the deleted folder
+ 
   backup_folders=("${backup_folders[@]:0:${#backup_folders[@]}-1}")
 done
