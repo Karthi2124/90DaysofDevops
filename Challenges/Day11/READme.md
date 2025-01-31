@@ -59,10 +59,3 @@ In shell scripting, unexpected errors can cause scripts to fail or behave unpred
     bash task5.sh
     ```
 
-## Contributing
-
-Feel free to **fork** this repository, make improvements, and submit a **pull request**. Contributions to improve error handling techniques or add new examples are welcome!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
