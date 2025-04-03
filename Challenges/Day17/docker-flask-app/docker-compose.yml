@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=devops
+      - POSTGRES_PASSWORD=devops123
+      - POSTGRES_DB=flaskapp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+  
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=${FLASK_ENV:-production}
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG:-False}
+      - DATABASE_URL=postgresql://devops:devops123@db:5432/flaskapp
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
