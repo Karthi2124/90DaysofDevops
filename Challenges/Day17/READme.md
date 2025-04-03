@@ -8,14 +8,14 @@ After hitting multiple roadblocks while containerizing a Flask application with 
 - `before_first_request` deprecation in Flask 2.3
 - Gunicorn connection issues
 
-## 🔍 The Debugging Process
+##  The Debugging Process
 1️ Verified container networking with `docker port` and `netstat`  
 2️ Checked for zombie processes with `docker ps -a` and `docker rm -f`  
 3️ Replaced deprecated Flask decorators with modern alternatives  
 4️ Tested database connectivity separately  
 5️ Used `docker-compose logs -f` to track startup errors  
 
-## 🛠 Key Solutions
+##  Key Solutions
  Complete system cleanup with `docker-compose down -v --remove-orphans`  
  Switched from `before_first_request` to `app_context`  
  Verified port mappings through multiple methods  
@@ -37,7 +37,7 @@ Big thanks to the Docker community for helping me work through these challenges!
 
 ---
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Prerequisites
 - Docker & Docker Compose installed
