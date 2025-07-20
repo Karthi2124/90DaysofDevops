@@ -25,9 +25,6 @@ git clone https://github.com/Karthi2124/Jenkins.git
 echo "Listing Repo Contents:"
 cd Jenkins
 ls -la
-
-
-
 ---
 
 
