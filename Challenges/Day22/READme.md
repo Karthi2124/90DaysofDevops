@@ -30,24 +30,4 @@ ls -la
 
 ---
 
-#### 🔧 **2. Try These Next Tasks (Advanced Jenkins Ideas)**
 
-| Task | Description |
-|------|-------------|
-| **Create a Jenkinsfile (Declarative Pipeline)** | Move your shell commands into a `Jenkinsfile` and create a **Pipeline project** instead of freestyle. |
-| **Email Notification** | Add email notification when a build fails or succeeds using the Email plugin. |
-| **Integrate Docker Build** | Write a Jenkins job that builds a Docker image from your repo’s Dockerfile. |
-| **Trigger Build on Git Push** | Use **GitHub Webhook** so Jenkins auto-builds when you push code to GitHub. |
-| **Use Parameters** | Add parameters to the job (e.g., choose which repo to clone). |
-
----
-
-### Want Help with Any of These?
-
-I can help you:
-- Convert this to a **Jenkinsfile**
-- Add **email notifications**
-- Create a **Docker build pipeline**
-- Set up **GitHub webhooks**
-
-Just tell me what you'd like to do next 💡
