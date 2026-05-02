@@ -67,6 +67,5 @@ Created → Started → Paused → Running → Stopped → Removed
 
 ![alt text](image-3.png)
 
-## Task - 4 
 
 
