@@ -1,18 +1,18 @@
 # Day 29 – Docker Basics
 
-## 🐳 What is Docker?
+##  What is Docker?
 
 Docker is a platform that allows you to package applications and their dependencies into containers so they can run consistently across environments.
 
 ---
 
-## 📦 What is a Container?
+##  What is a Container?
 
 A container is a lightweight, portable environment that runs applications with all required dependencies.
 
 ---
 
-## ⚖️ Containers vs Virtual Machines
+##  Containers vs Virtual Machines
 
 | Feature     | Containers     | Virtual Machines |
 | ----------- | -------------- | ---------------- |
@@ -23,7 +23,7 @@ A container is a lightweight, portable environment that runs applications with a
 
 ---
 
-## 🧠 Docker Architecture
+##  Docker Architecture
 
 * Docker Client → sends commands
 * Docker Daemon → executes commands
@@ -33,13 +33,13 @@ A container is a lightweight, portable environment that runs applications with a
 
 ---
 
-## 🔄 Architecture Flow
+##  Architecture Flow
 
 User → Docker CLI → Docker Daemon → Pull Image → Run Container
 
 ---
 
-## 🧪 Commands Used
+##  Commands Used
 
 ### Run container
 
@@ -87,7 +87,7 @@ docker exec -it my-nginx bash
 
 ---
 
-## 🔍 Observations
+##  Observations
 
 * Containers are fast and lightweight
 * Easy to run applications anywhere
@@ -96,7 +96,7 @@ docker exec -it my-nginx bash
 
 ---
 
-## 🚀 Key Learning
+##  Key Learning
 
 Docker simplifies application deployment and is essential for modern DevOps workflows.
 
