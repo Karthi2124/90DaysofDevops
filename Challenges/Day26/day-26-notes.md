@@ -54,7 +54,7 @@ gh repo list
 gh repo view --web
 ```
 
-### Delete repo (⚠️ careful)
+### Delete repo (careful)
 
 ```bash
 gh repo delete devops-gh-test --confirm
