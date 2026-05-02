@@ -1,3 +1,6 @@
 X
+<<<<<<< HEAD
 Y
 Z
+=======
+>>>>>>> parent of 822e33f (Commit Y)
