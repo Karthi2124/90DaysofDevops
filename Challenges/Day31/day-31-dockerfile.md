@@ -1,6 +1,6 @@
 # Day 31 – Dockerfile: Build Your Own Images
 
-## 🧾 What I Did in This Project
+##  What I Did in This Project
 
 In this project, I worked on creating and managing Docker images using Dockerfiles.  
 I learned how to write Dockerfiles from scratch and build custom images based on different requirements.
