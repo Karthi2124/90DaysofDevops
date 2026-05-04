@@ -1,0 +1,31 @@
+# .dockerignore — controls what gets sent to the Docker build context
+# Works just like .gitignore. Excluded files are never sent to the daemon.
+#
+# WHY THIS MATTERS:
+#   - Keeps sensitive files (like .env) out of your image
+#   - Speeds up builds (smaller context = faster upload to Docker daemon)
+#   - Avoids accidentally caching secrets in image layers
+#   - Prevents huge node_modules from bloating your build context
+
+# Node.js dependencies — always reinstall with npm install inside the image
+node_modules
+
+# Git history — not needed inside a container
+.git
+
+# All markdown files — docs are for humans, not containers
+*.md
+
+# Environment files — NEVER bake secrets into images!
+# Pass secrets at runtime using: docker run -e KEY=value or --env-file
+.env
+.env.local
+.env.*.local
+
+# Common extras worth adding in real projects:
+# .DS_Store        ← macOS metadata
+# *.log            ← log files
+# dist/            ← build artifacts (rebuild inside container)
+# coverage/        ← test coverage reports
+# .pytest_cache/   ← Python test cache
+# __pycache__/     ← Python bytecode

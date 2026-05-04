@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Day 31 – My Docker Website</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      max-width: 560px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    }
+
+    .whale { font-size: 5rem; margin-bottom: 1rem; }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      background: rgba(96, 165, 250, 0.15);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      color: #93c5fd;
+      font-weight: 500;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      text-align: left;
+    }
+
+    .info-item {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+    }
+
+    .info-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    .info-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    .footer {
+      margin-top: 1.8rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="whale">🐳</div>
+    <h1>Hello from Docker!</h1>
+    <p class="subtitle">Day 31 – Dockerfiles & Custom Images</p>
+
+    <div class="badge-row">
+      <span class="badge">nginx:alpine</span>
+      <span class="badge">my-website:v1</span>
+      <span class="badge">Port 80</span>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Base Image</div>
+        <div class="info-value">nginx:alpine</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Tag</div>
+        <div class="info-value">my-website:v1</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Challenge</div>
+        <div class="info-value">Day 31 / Task 4</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Status</div>
+        <div class="info-value">Running</div>
+      </div>
+    </div>
+
+    <p class="footer">Built with Docker · Served by Nginx · 100 Days of DevOps</p>
+  </div>
+</body>
+</html>
