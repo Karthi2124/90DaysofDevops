@@ -1,0 +1,77 @@
+version: "3.9"
+
+services:
+
+  web:
+    build: ./app
+
+    container_name: node_app
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      DB_HOST: db
+      DB_NAME: mydb
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    networks:
+      - backend
+
+    labels:
+      project: "day34"
+      service: "web"
+
+  db:
+    image: postgres:15
+
+    container_name: postgres_db
+
+    restart: always
+
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - backend
+
+    labels:
+      project: "day34"
+      service: "database"
+
+  redis:
+    image: redis:7
+
+    container_name: redis_cache
+
+    restart: unless-stopped
+
+    networks:
+      - backend
+
+    labels:
+      project: "day34"
+      service: "cache"
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
