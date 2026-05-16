@@ -1,0 +1,29 @@
+# Stage 1 - Build Stage
+FROM node:18 AS builder
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy application files
+COPY . .
+
+# Stage 2 - Production Stage
+FROM node:18-alpine
+
+# Create app directory
+WORKDIR /app
+
+# Copy only required files from builder stage
+COPY --from=builder /app ./
+
+# Expose application port
+EXPOSE 3000
+
+# Start application
+CMD ["npm", "start"]
