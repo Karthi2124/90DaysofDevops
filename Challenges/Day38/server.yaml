@@ -1,0 +1,22 @@
+---
+server:
+  name: devops-server
+  ip: 192.168.1.100
+  port: 8080
+
+database:
+  host: localhost
+  name: devops_db
+  credentials:
+    user: admin
+    password: secret123
+
+startup_script: |
+  echo "Starting server"
+  echo "Checking database"
+  echo "Starting application"
+
+startup_message: >
+  This server starts the application
+  after checking the database
+  connection.
