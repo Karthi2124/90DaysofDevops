@@ -41,5 +41,3 @@ CI/CD helps reduce manual work and human errors. It makes the software developme
 ## Status
 
 📖 Currently learning CI/CD concepts.
-
-#90DaysOfDevOps #DevOpsKaJosh #TrainWithShubham
