@@ -132,9 +132,15 @@ Steps are the individual tasks inside a job.
 
 My workflow has multiple steps that run one after another.
 
-### `uses`
+### `name:` (on a step)
 
-The `uses` keyword allows me to use an existing GitHub Action.
+The `name:` key gives each individual step a clear, human-readable title. 
+
+In the GitHub Actions execution UI, this name is displayed next to the step status icon (green check or red cross), making it very easy to track progress and identify which command is running or failing.
+
+### `uses:`
+
+The `uses:` keyword allows me to use an existing pre-built GitHub Action from the GitHub Marketplace or community.
 
 I used:
 
@@ -142,11 +148,11 @@ I used:
 uses: actions/checkout@v4
 ```
 
-This checks out my repository code so that the runner can access the files.
+This checks out my repository code onto the runner machine so that subsequent steps can access and work with the files.
 
-### `run`
+### `run:`
 
-The `run` keyword is used to execute commands on the GitHub runner.
+The `run:` keyword executes command-line programs and shell scripts directly on the runner.
 
 For example:
 
@@ -154,9 +160,11 @@ For example:
 run: echo "Hello from GitHub Actions!"
 ```
 
-This prints a message in the GitHub Actions log.
+This runs an `echo` command inside bash on the Ubuntu runner and prints the output directly into the workflow execution logs.
 
-### Branch Name
+### Branch Name (`${{ github.ref_name }}`)
+
+GitHub Actions provides built-in context variables through the `${{ ... }}` syntax.
 
 I used:
 
@@ -164,13 +172,7 @@ I used:
 run: echo "Branch: ${{ github.ref_name }}"
 ```
 
-GitHub automatically provides the name of the branch.
-
-For example, if I push code to the `main` branch, the output will be:
-
-```text
-Branch: main
-```
+GitHub automatically populates `${{ github.ref_name }}` with the branch or tag name that triggered the run (for example, `main`).
 
 ## Simple Workflow Flow
 
@@ -179,69 +181,52 @@ Developer
     ↓
 Write or Update Code
     ↓
-git add
-    ↓
-git commit
+git add & git commit
     ↓
 git push
     ↓
-GitHub Actions Starts
+GitHub Actions Triggered (on: push)
     ↓
-Ubuntu Runner Starts
+Ubuntu Runner Provisioned (runs-on: ubuntu-latest)
     ↓
-Checkout Code
+Steps Executed Sequentially:
+  1. Checkout code (actions/checkout@v4)
+  2. Print greeting (echo)
+  3. Print date and time (date)
+  4. Print branch name (echo ${{ github.ref_name }})
+  5. List repo files (ls -la)
+  6. Print OS info (uname -a)
     ↓
-Run Commands
-    ↓
-Workflow Completed
+Workflow Status: 🟢 Succeeded
 ```
 
-## Successful and Failed Workflow
+## Task 5: Testing Pipeline Failure & How to Read Errors
 
-I learned how to check my workflow in the GitHub Actions tab.
+To understand how GitHub Actions handles failures, I tested a deliberate failure:
 
-A successful workflow is shown with a green check mark:
+### 1. What Does a Failed Pipeline Look Like?
+- The workflow run is flagged with a distinct **red cross (❌ Failure)** in the Actions tab.
+- In the job execution graph, the specific step that threw a non-zero exit code (e.g., `exit 1` or a command not found) turns **red**.
+- Any steps scheduled **after** the failed step are automatically skipped, protecting downstream systems from running on a broken state.
 
-```text
-🟢 Success
-```
+### 2. How to Read and Troubleshoot the Error
+1. Go to the **Actions** tab of the repository.
+2. Click on the failed workflow run (marked in red).
+3. Click on the failed job (e.g., `greet`).
+4. GitHub Actions automatically expands the step that failed and highlights the terminal error in red.
+5. Review the error message and exit code (for example: `Process completed with exit code 1`).
+6. Fix the code or configuration locally, commit, and push again. The workflow will re-run automatically.
 
-A failed workflow is shown with a red cross:
+## Pipeline Run Screenshot
 
-```text
-🔴 Failure
-```
+Below is the verified green run of the pipeline:
 
-When a workflow fails, I can open the failed workflow, click the job, and check the error message.
-
-The error message helps me understand what went wrong.
-
-After fixing the problem, I can commit and push the changes again.
-
-GitHub Actions will automatically run the workflow again.
-
-## My Understanding
-
-GitHub Actions helps automate tasks that developers would otherwise need to run manually.
-
-Whenever I push code to GitHub, my workflow can automatically start and execute the steps I define.
-
-I also learned that a pipeline can be successful or fail.
-
-If a pipeline fails, I can read the error logs, fix the problem, and push the changes again.
+![First Green Pipeline Run](./first-green-run.png)
 
 ## What I Learned Today
 
-- How to create a GitHub Actions workflow.
-- Where GitHub Actions workflow files are stored.
-- How to create a `.yml` file.
-- How to trigger a workflow using `push`.
-- What `jobs:` means.
-- What `runs-on:` means.
-- What `steps:` means.
-- How to use `uses:`.
-- How to use `run:`.
-- How to print the branch name.
-- How to view GitHub Actions workflow runs.
-- How to identify successful and failed workflows.
-- How to check workflow error logs.
+- How to create a GitHub Actions workflow inside `.github/workflows/`.
+- How YAML syntax powers GitHub Actions configurations.
+- The core anatomy: `on:`, `jobs:`, `runs-on:`, `steps:`, `uses:`, `run:`, and `name:`.
+- How to access built-in GitHub context variables such as `${{ github.ref_name }}`.
+- How to view logs, monitor execution, and analyze both successful (🟢) and failed (🔴) pipelines in the cloud.
